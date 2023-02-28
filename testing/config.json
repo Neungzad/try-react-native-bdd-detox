@@ -1,0 +1,4 @@
+{
+  "setupFilesAfterEnv": ["./e2e/features/support/init.js"],
+  "testEnvironment": "node"
+}
