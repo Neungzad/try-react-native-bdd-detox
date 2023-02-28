@@ -15,5 +15,6 @@
     "@cucumber/cucumber": "^9.0.0",
     "detox": "^20.3.0",
     "metro-react-native-babel-preset": "^0.75.1"
-  }
+  },
+  "dependencies": {}
 }
