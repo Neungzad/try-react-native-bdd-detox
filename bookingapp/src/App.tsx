@@ -1,22 +1,22 @@
 import React from 'react';
 import 'react-native-gesture-handler';
-import {NavigationContainer} from '@react-navigation/native';
-import {createNativeStackNavigator} from '@react-navigation/native-stack';
-import SignUp from './SignUp';
-import Landing from './Landing';
+import {setCustomText} from 'react-native-global-props';
+import {SafeAreaProvider} from 'react-native-safe-area-context';
+import {Navigator} from './routes/Routes';
 
-const Stack = createNativeStackNavigator();
+const customTextProps = {
+  style: {
+    fontSize: 16,
+  },
+};
 
-type Props = {};
+const App = () => {
+  setCustomText(customTextProps);
 
-const App: React.FC<Props> = () => {
   return (
-    <NavigationContainer>
-      <Stack.Navigator>
-        <Stack.Screen name="Landing" component={Landing} />
-        <Stack.Screen name="SignUp" component={SignUp} />
-      </Stack.Navigator>
-    </NavigationContainer>
+    <SafeAreaProvider>
+      <Navigator />
+    </SafeAreaProvider>
   );
 };
 

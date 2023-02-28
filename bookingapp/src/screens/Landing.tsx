@@ -1,21 +1,19 @@
 import React from 'react';
 import {Image, StyleSheet, Text, View} from 'react-native';
-import thImage from './assets/Landing/thailand.png';
+import thImage from '../assets/Landing/thailand.png';
 // import titleImage from './assets/Landing/title.png';
-import paloLogo from './assets/PALOLogo.png';
-import AppButton from './components/basic/AppButton';
-import BottomContainer from './components/composite/BottomContainer';
-import PublicLayout from './components/composite/PublicLayout';
-import TopContainer from './components/composite/TopContainer';
+import paloLogo from '../assets/PALOLogo.png';
+import AppButton from '../components/basic/AppButton';
+import BottomContainer from '../components/composite/BottomContainer';
+import PublicLayout from '../components/composite/PublicLayout';
+import TopContainer from '../components/composite/TopContainer';
 import 'react-native-gesture-handler';
-import {NativeStackScreenProps} from '@react-navigation/native-stack';
+import {StackNavigationProp} from '@react-navigation/stack';
+import {NavigatorParamsList, Routes} from '../routes/Routes';
 
-type RootStackParamList = {
-  Landing: undefined;
-  SignUp: undefined;
+type Props = {
+  navigation: StackNavigationProp<NavigatorParamsList, Routes.Landing>;
 };
-
-type Props = NativeStackScreenProps<RootStackParamList, 'Landing'>;
 
 const Landing: React.FC<Props> = ({navigation}) => {
   return (
@@ -47,13 +45,15 @@ const Landing: React.FC<Props> = ({navigation}) => {
             testID="login-button"
             variant="primary"
             text="Login"
-            onPress={() => {}}
+            onPress={() => {
+              navigation.navigate(Routes.Login);
+            }}
           />
           <AppButton
             testID="signUp-button"
             text="Sign Up"
             onPress={() => {
-              navigation.navigate('SignUp');
+              navigation.navigate(Routes.SignUp);
             }}
           />
         </View>
