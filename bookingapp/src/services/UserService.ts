@@ -2,9 +2,18 @@ import axios from 'axios';
 const api = axios.create({baseURL: 'http://10.0.2.2:7071/users/api/v1/'});
 
 const login = (email: string, password: string) => {
-  return api.post('users/login', {
-    login: email,
-    password,
+  // return api.post('users/login', {
+  //   login: email,
+  //   password,
+  // });
+  return new Promise((resolve, _reject) => {
+    setTimeout(() => {
+      resolve({
+        data: {
+          token: '!@!$&#!(#wow9080',
+        },
+      });
+    }, 1000);
   });
 };
 

@@ -30,13 +30,37 @@ const searchRoom = (
   startTime: string,
   endTime: string,
 ) => {
-  return api.get('rooms', {
+  /* return api.get('rooms', {
     params: {
       capacity,
       date,
       startTime,
       endTime,
     },
+  }); */
+  return new Promise((resolve, _reject) => {
+    setTimeout(() => {
+      resolve({
+        data: [
+          {
+            name: 'room 1',
+            capacity: 2,
+          },
+          {
+            name: 'room 2',
+            capacity: 4,
+          },
+          {
+            name: 'room 3',
+            capacity: 6,
+          },
+          {
+            name: 'room 4',
+            capacity: 8,
+          },
+        ],
+      });
+    }, 1000);
   });
 };
 

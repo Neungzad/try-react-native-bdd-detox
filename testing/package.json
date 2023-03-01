@@ -4,7 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test:android": "DETOX_CONFIGURATION=android.emu.debug node_modules/.bin/cucumber-js ./e2e/features",
+    "test:android-debug": "DETOX_CONFIGURATION=android.emu.debug node_modules/.bin/cucumber-js ./e2e/features/FindRoom.feature"
   },
   "author": "",
   "license": "ISC",
@@ -16,5 +17,7 @@
     "detox": "^20.3.0",
     "metro-react-native-babel-preset": "^0.75.1"
   },
-  "dependencies": {}
+  "dependencies": {
+    "@react-native-async-storage/async-storage": "^1.17.11"
+  }
 }

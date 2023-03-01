@@ -20,6 +20,7 @@ interface Props {
   testID: string;
   titleImage: {uri: string};
   headerBackground?: ImageSourcePropType;
+  children: React.ReactNode;
 }
 
 const PrivateLayout: React.FC<Props> = ({
@@ -67,7 +68,7 @@ const styles = StyleSheet.create({
   title: {
     flex: 1,
     justifyContent: 'flex-end', //put all contents to bottom
-    // padding: 30,
+    paddingHorizontal: 30,
   },
   safeArea: {
     flex: 1,
@@ -81,6 +82,7 @@ const styles = StyleSheet.create({
   },
   headerButtonRow: {
     flexDirection: 'row',
+    paddingHorizontal: 20,
   },
   headerButtonCol: {
     flex: 1,

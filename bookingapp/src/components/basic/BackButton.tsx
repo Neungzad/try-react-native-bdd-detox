@@ -25,7 +25,7 @@ const BackButton: React.FC<Props> = () => {
       onPress={() => {
         goBack();
       }}>
-      <Text>Back</Text>
+      <Text style={{color: 'white'}}>Back</Text>
     </TouchableOpacity>
   ) : null;
 };

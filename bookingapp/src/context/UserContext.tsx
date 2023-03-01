@@ -14,7 +14,16 @@ const UserContextProvider: React.FC = ({children}) => {
 
   const setLoggedUser = async (email: string, token: string) => {
     setEmail(email);
+    console.log(
+      '🚀 ~ file: UserContext.tsx:23 ~ setLoggedUser ~ email:',
+      email,
+    );
+
     setToken(token);
+    console.log(
+      '🚀 ~ file: UserContext.tsx:18 ~ setLoggedUser ~ token:',
+      token,
+    );
     await AsyncStorage.setItem('token', token);
     await AsyncStorage.setItem('email', email);
   };
