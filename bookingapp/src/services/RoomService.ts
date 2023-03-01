@@ -43,20 +43,20 @@ const searchRoom = (
       resolve({
         data: [
           {
-            name: 'room 1',
-            capacity: 2,
+            name: 'Meeting Room 1',
+            capacity: 10,
           },
           {
-            name: 'room 2',
-            capacity: 4,
+            name: 'Meeting Room 2',
+            capacity: 12,
           },
           {
-            name: 'room 3',
-            capacity: 6,
+            name: 'Meeting Room 3',
+            capacity: 18,
           },
           {
-            name: 'room 4',
-            capacity: 8,
+            name: 'Meeting Room 4',
+            capacity: 25,
           },
         ],
       });
@@ -71,22 +71,58 @@ const bookRoom = (
   endTime: string,
   roomName: string,
 ) => {
-  return api.post('users/:email/bookings', {
-    date,
-    startTime,
-    endTime,
-    roomName,
-    nbPeople,
-    userId: '$email',
+  // return api.post('users/:email/bookings', {
+  //   date,
+  //   startTime,
+  //   endTime,
+  //   roomName,
+  //   nbPeople,
+  //   userId: '$email',
+  // });
+  return new Promise((resolve, _reject) => {
+    setTimeout(() => {
+      resolve({
+        data: {
+          userId: 'U001',
+          bookingId: 'B001',
+          date: '20231010',
+          startTime: '0800',
+          endTime: '1000',
+          nbPeople: 8,
+          roomName: 'Meeting Room 1',
+        },
+      });
+    }, 1000);
   });
 };
 
 const getHistory = () => {
-  return api.get('users/:email/bookings');
+  // return api.get('users/:email/bookings');
+  return new Promise((resolve, _reject) => {
+    setTimeout(() => {
+      resolve({
+        data: [
+          {
+            bookingId: 'B001',
+            date: '20231010',
+            startTime: '0800',
+            endTime: '1000',
+            nbPeople: 8,
+            roomName: 'Meeting Room 1',
+          },
+        ],
+      });
+    }, 1000);
+  });
 };
 
-const cancelBooking = (bookingId: string) =>
-  api.delete(`users/:email/bookings/${bookingId}`);
+const cancelBooking = (bookingId: string) => {
+  console.log(
+    '🚀 ~ file: RoomService.ts:118 ~ cancelBooking ~ bookingId:',
+    bookingId,
+  );
+  // api.delete(`users/:email/bookings/${bookingId}`);
+};
 
 export default {
   searchRoom,

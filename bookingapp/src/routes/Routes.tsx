@@ -10,9 +10,9 @@ import SignUp from '../screens/SignUp';
 import FindRoom from '../screens/FindRoom';
 import SelectRoom from '../screens/SelectRoom';
 // import SelectRoom from '../screens/SelectRoom';
-// import History from '../screens/History';
-// import Success from '../screens/Success';
-// import BookingSummary from '../screens/BookingSummary';
+import History from '../screens/History';
+import Success from '../screens/Success';
+import BookingSummary from '../screens/BookingSummary';
 
 export enum Routes {
   Landing = 'Landing',
@@ -78,12 +78,12 @@ export const Navigator: React.FC<{isLoggedIn: boolean}> = ({isLoggedIn}) => {
           <>
             <Stack.Screen name={Routes.FindRoom} component={FindRoom} />
             <Stack.Screen name={Routes.SelectRoom} component={SelectRoom} />
-            {/*<Stack.Screen
+            <Stack.Screen
               name={Routes.BookingSummary}
               component={BookingSummary}
             />
             <Stack.Screen name={Routes.Success} component={Success} />
-            <Stack.Screen name={Routes.History} component={History} /> */}
+            <Stack.Screen name={Routes.History} component={History} />
           </>
         ) : (
           <>
