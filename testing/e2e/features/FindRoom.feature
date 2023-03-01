@@ -4,7 +4,7 @@ Feature: Find Room
   Scenario: Find Room Success
     Given I am on findRoom-screen with user "NEUNG"
     When I type "10" into "nbPeople-input" component
-    And I type "20211010" into "date-input" component
+    And I type "20231010" into "date-input" component
     And I type "0800" into "startTime-input" component
     And I type "1000" into "endTime-input" component
     And I tap on the "findRoom-button" component

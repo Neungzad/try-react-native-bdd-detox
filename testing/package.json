@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test:android": "DETOX_CONFIGURATION=android.emu.debug node_modules/.bin/cucumber-js ./e2e/features",
-    "test:android-debug": "DETOX_CONFIGURATION=android.emu.debug node_modules/.bin/cucumber-js ./e2e/features/FindRoom.feature"
+    "test:android-debug": "DETOX_CONFIGURATION=android.emu.debug node_modules/.bin/cucumber-js ./e2e/features/History.feature"
   },
   "author": "",
   "license": "ISC",

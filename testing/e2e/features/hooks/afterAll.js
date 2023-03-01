@@ -3,9 +3,9 @@ import { AfterAll } from "@cucumber/cucumber";
 
 AfterAll(async () => {
     // await removeAccessToken();
+    // await element(by.id("logout-button")).tap();
 })
 
 const removeAccessToken = async () => {
-    console.log("-- removeAccessToken");
     // await a.storeToken('');
 }

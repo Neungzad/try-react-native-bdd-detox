@@ -5,3 +5,4 @@ Feature: Login
     And I type "1q2w3e4r" into "password-input" component
     And I tap on the "login-button" component
     Then I should be on the "find-room-screen"
+    When I tap on the "logout-button" component

@@ -9,7 +9,9 @@ BeforeAll(async () => {
 });
 
 Before(async (context) => {
-  await device.reloadReactNative();
+   //always reinstall app when run a new scenario
+  await device.launchApp({ delete: true });
+  // await device.reloadReactNative();
   await adapter.beforeEach(context);
 });
 

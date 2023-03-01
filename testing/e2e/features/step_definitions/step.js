@@ -30,14 +30,22 @@ Given("I am on sign up screen", async () => {
     .withTimeout(10000);;
 });
 
+// WHEN
 When("I tap on the {string} component", async (componentId) => {
   await element(by.id(componentId)).tap();
+});
+
+When("I tap on item list {string} at index {int}", async (componentId, index) => {
+  await element(by.id(componentId)).atIndex(index).tap();
 });
 
 When("I type {string} into {string} component", async (value, componentId) => {
   await element(by.id(componentId)).typeText(value);
   await device.pressBack();
 });
+
+// THEN
+
 Then("I see the {string} component", async (componentId) => {
   await expect(element(by.id(componentId))).toBeVisible();
 });
